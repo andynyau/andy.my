@@ -3,14 +3,62 @@
   <head>
     <meta charset="utf-8">
     <title>andy.my - life is about discovery and learning</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="/content/stylesheets/layout.css" />    
   </head>
-  <body>
+  <body>    
     <div class="container">
-        <h1>andy.my</h1>
-        <hr>
-        <p>Coming Soon</p>    
+      <div class="content">
+          <h1>andy.my</h1>
+          <hr>
+          <p>Coming Soon</p>
+      </div>      
+      <div class="sidebar">
+        <div class="nav">
+            <a class="brand" href="/">
+              <canvas id="cvsBackground" class="branding"></canvas>
+              <canvas id="cvsForeground" class="branding"></canvas>
+              <span>ANDY.MY</span>
+            </a>
+            <button id="btnMenuToggle" class="toggle-button">
+              <div></div>
+              <div></div>
+              <div></div>
+            </button>
+            <ul class="menu">
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#" class="sub-menu-link">
+                  Life                  
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="#">Topic 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Topic 2</a>
+                    </li>                  
+                </ul>
+              </li>
+              <li>
+                  <a href="#" class="sub-menu-link">
+                    Discovery                    
+                  </a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="#">Topic 3</a>
+                    </li>
+                  </ul>
+                </li>              
+            </ul>
+        </div>        
+      </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="/content/scripts/core.js"></script>
   </body>
 </html>
