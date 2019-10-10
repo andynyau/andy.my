@@ -4,19 +4,24 @@ html, body {
     min-width: 100%;
     width: 100%;
     max-width: 100%;
+<<<<<<< Updated upstream
     font-family: Helvetica, Arial, sans-serif;
+=======
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+>>>>>>> Stashed changes
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
-    color: #e7ffd9;
+    color: #ffffff;
     text-decoration: none;
     text-shadow: none;
-    background-color: #363331
+    background: linear-gradient(165deg, #2178D1 0%, #7FB4C7 100%);
 }
 
 a, a:visited, a:active, a:hover {
-    color: #e7ffd9;
+    color: #ffffff;
     text-decoration: none;
     text-shadow: none;
     margin: 0;
@@ -28,7 +33,21 @@ a:hover {
     cursor:pointer
 }
 
-.container {
+.header {
+    height: 60px;
+    background: #ffffff;    
+}
+
+.header .brand {
+    float: left;    
+    margin-top: 10px;
+}
+
+.header .brand img {
+    width: 200px;
+}
+
+.container, .header-nav {
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -38,13 +57,9 @@ a:hover {
     margin: 0 auto;
 }
 
-.content {
-    margin-top: 100px;
-}
-
 .sidebar {
-    padding: 20px;
-    position: fixed;
+    padding: 10px 20px;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -63,14 +78,14 @@ ul.menu, ul.sub-menu {
 ul.sub-menu {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    height: 0;
+    transition: all 0.5s linear;
+    max-height: 0;
 }
 
 ul.sub-menu.expand {
     visibility: visible;
     opacity: 1;
-    height: auto;
+    max-height: 500px;
 }
 
 ul.menu li {
@@ -81,8 +96,8 @@ ul.menu li {
 .toggle-button {
     position: relative;
     float: right;
-    background-color: #363331;
-    border: #e7ffd9 2px solid;
+    background-color: #ffffff;
+    border: #2178D1 2px solid;
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
@@ -91,7 +106,7 @@ ul.menu li {
 .toggle-button div {
     width: 20px;
     height: 2px;
-    background-color: #e7ffd9;
+    background-color: #2178D1;
     margin: 5px 0;
 }
 
@@ -106,61 +121,40 @@ ul.menu {
 }
 
 .nav.expand ul.menu li {    
-    background-color: #e7ffd9;
+    background-color: #ffffff;
 }
 
 .nav.expand ul.menu li a {
     color: #363331;
 }
 
-a.brand {
-    position: relative;
-    height: 50px;
-    width: 200px;
-    display: block;
-    float: left;
-    box-shadow: 0 0 0 3px #e7ffd9, 0 0 20px 7px rgba(231, 255, 217, 0.7);
-}
-
-a.brand span {
-    position: absolute;
-    display: block;
-    font-size: 30px;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    -moz-transform: translateY(-50%) translateX(-50%);
-    -ms-transform: translateY(-50%) translateX(-50%);
-    -o-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);    
-}
-
-.branding {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    width: 200px;
-}
-
 a.sub-menu-link::after {
-    content: '>';
+    border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(45deg);
+	vertical-align: top;
+	width: 0.45em;
+    transition: all 0.5s ease;
 }
 
 a.sub-menu-link.expand::after {
-    content: 'v';
+    transform: rotate(135deg);
 }
 
 @media (min-width: 768px) {
-    .container, .nav {
+    .container, .header-nav, .nav {
         width: 750px;
     }
 }
 
 @media (min-width: 992px) {
-    .container {
+    .container, .header-nav {
         width: 970px;
     }
 
@@ -182,7 +176,11 @@ a.sub-menu-link.expand::after {
     ul.menu {
         display: block;
         margin: 0;
+<<<<<<< Updated upstream
         padding-top: 80px;
+=======
+        background: none;
+>>>>>>> Stashed changes
     }
 
     #btnMenuToggle {
@@ -191,7 +189,88 @@ a.sub-menu-link.expand::after {
 }
 
 @media (min-width: 1200px) {
-    .container {
+    .container, .header-nav {
         width: 1170px;
     }
+<<<<<<< Updated upstream
 }
+=======
+
+    .nav a.brand, .branding {
+        width: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#parallax-lvl-0, #parallax-lvl-1, #parallax-lvl-2, #parallax-lvl-3 {
+    position: absolute;
+    top: 0;
+}
+
+#parallax-lvl-0 {
+    z-index: -1
+}
+
+#parallax-lvl-1 {
+    z-index: -2
+}
+
+#parallax-lvl-2 {
+    z-index: -3
+}
+
+#parallax-lvl-3 {
+    z-index: -4;
+}
+  
+  
+  .cloud {    
+    position: absolute;
+    opacity: 0.7;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .size1 {
+    width:100px;
+    height:100px;
+  }
+  .size2 {
+    width:200px;
+    height:200px;
+  }
+  .size3 {
+    width:300px;
+    height:300px;
+  }
+  .size4 {
+    width:400px;
+    height:400px;
+  }
+  
+  .cloud1 {
+    background-image: url("/content/images/cloud1.png");
+  }
+
+  .cloud2 {
+    background-image: url("/content/images/cloud2.png");
+  }
+
+  .cloud3 {
+    background-image: url("/content/images/cloud3.png");
+  }
+  
+>>>>>>> Stashed changes
