@@ -40,10 +40,10 @@ var canvas = document.getElementById('cvsBackground'),
     canvas2 = document.getElementById('cvsForeground'),
     ctx2 = canvas2.getContext( '2d' ),
 		// full screen dimensions
-		cw = 200,
-		ch = 50,
+		cw = document.getElementsByClassName('nav')[0].clientWidth,
+		ch = document.getElementsByClassName('nav')[0].clientHeight,
     charArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-    maxCharCount = 100,
+    //maxCharCount = 100,
     fallingCharArr = [],
     fontSize = 7,
     maxColums = cw/(fontSize);
@@ -68,7 +68,7 @@ var canvas = document.getElementById('cvsBackground'),
     Point.prototype.draw = function(ctx){
 
       this.value = charArr[randomInt(0,charArr.length-1)].toUpperCase();
-      this.speed = randomFloat(1,2);
+      this.speed = randomFloat(0,5);
 
 
       ctx2.fillStyle = "rgba(255,255,255,0.8)";
@@ -85,7 +85,7 @@ var canvas = document.getElementById('cvsBackground'),
         if(this.y > ch)
         {
           this.y = randomFloat(-100,0);
-          this.speed = randomFloat(2,5);
+          this.speed = randomFloat(0,5);
         }
     }
 
@@ -112,9 +112,12 @@ var canvas = document.getElementById('cvsBackground'),
       requestAnimationFrame(update);
     }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   update();
 =======
+=======
+>>>>>>> 49ca6bf38c7c818f874bc834649cf33935519dc5
   update();
 
 
@@ -270,5 +273,5 @@ var canvas = document.getElementById('cvsBackground'),
 		requestAnimationFrame(animate);
 	}
 	animate();
+<<<<<<< HEAD
 */
->>>>>>> Stashed changes

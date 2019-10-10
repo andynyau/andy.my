@@ -4,12 +4,8 @@ html, body {
     min-width: 100%;
     width: 100%;
     max-width: 100%;
-<<<<<<< Updated upstream
-    font-family: Helvetica, Arial, sans-serif;
-=======
     min-height: 100%;
     font-family: 'Lato', sans-serif;
->>>>>>> Stashed changes
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -151,6 +147,17 @@ a.sub-menu-link.expand::after {
     .container, .header-nav, .nav {
         width: 750px;
     }
+
+    a.brand, .branding {
+        width: 300px;
+    }
+}
+
+#bgCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 @media (min-width: 992px) {
@@ -169,22 +176,18 @@ a.sub-menu-link.expand::after {
         position: initial; 
     }
 
-    .nav {
-        width: 200px;
-    }
-
     ul.menu {
         display: block;
         margin: 0;
-<<<<<<< Updated upstream
-        padding-top: 80px;
-=======
         background: none;
->>>>>>> Stashed changes
     }
 
     #btnMenuToggle {
         display: none;
+    }
+
+    .nav, a.brand, .branding {
+        width: 250px;
     }
 }
 
@@ -192,9 +195,6 @@ a.sub-menu-link.expand::after {
     .container, .header-nav {
         width: 1170px;
     }
-<<<<<<< Updated upstream
-}
-=======
 
     .nav a.brand, .branding {
         width: 300px;
@@ -272,5 +272,3 @@ a.sub-menu-link.expand::after {
   .cloud3 {
     background-image: url("/content/images/cloud3.png");
   }
-  
->>>>>>> Stashed changes
