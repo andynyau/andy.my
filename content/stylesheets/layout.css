@@ -29,6 +29,16 @@ a:hover {
     cursor:pointer
 }
 
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid #ffffff;
+}
+
 .header {
     height: 60px;
     background: #ffffff;    
@@ -44,7 +54,7 @@ a:hover {
 }
 
 .container, .header-nav {
-    padding: 0 15px;
+    padding: 0;
     margin: 0 auto;
 }
 
@@ -54,7 +64,6 @@ a:hover {
 }
 
 .sidebar {
-    padding: 10px 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +83,7 @@ ul.menu, ul.sub-menu {
 ul.sub-menu {
     visibility: hidden;
     opacity: 0;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
     max-height: 0;
 }
 
@@ -89,6 +98,19 @@ ul.menu li {
     padding: 5px;
 }
 
+a.sub-menu-link.expand::after {
+    transform: rotate(135deg);
+}
+
+.content {
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+}
+
+.header-nav, .nav {
+    width: 100%;
+}
+
 .toggle-button {
     position: relative;
     float: right;
@@ -96,7 +118,7 @@ ul.menu li {
     border: #2178D1 2px solid;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px 10px 0 0;
 }
 
 .toggle-button div {
@@ -106,10 +128,21 @@ ul.menu li {
     margin: 5px 0;
 }
 
+a.brand, .branding {
+    width: 300px;
+}
+
+.nav.expand ul.menu {
+    padding-top: 0;
+    border:#2178D1 2px solid;
+    position: relative;
+    top: 15px;
+}
+
 .nav.expand ul.menu {
     display: block;
     clear: both;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 ul.menu {
@@ -126,38 +159,28 @@ ul.menu {
 
 a.sub-menu-link::after {
     border-style: solid;
-	border-width: 0.25em 0.25em 0 0;
-	content: '';
-	display: inline-block;
-	height: 0.45em;
-	left: 0.15em;
-	position: relative;
-	top: 0.15em;
-	transform: rotate(45deg);
-	vertical-align: top;
-	width: 0.45em;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(45deg);
+    vertical-align: top;
+    width: 0.45em;
     transition: all 0.5s ease;
-}
-
-a.sub-menu-link.expand::after {
-    transform: rotate(135deg);
+    color: #2178D1;
 }
 
 @media (min-width: 768px) {
+    .container, .header-nav {
+        padding: 0 15px;
+    }
+
     .container, .header-nav, .nav {
-        width: 750px;
+        width: 720px;
     }
-
-    a.brand, .branding {
-        width: 300px;
-    }
-}
-
-#bgCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
 
 @media (min-width: 992px) {
@@ -167,13 +190,14 @@ a.sub-menu-link.expand::after {
 
     .content {
         float: left;
-        width: 70%;
+        width: 65%;
         margin-top: 0px;
     }
 
     .sidebar {
         float: left;
         position: initial; 
+        padding: 20px;
     }
 
     ul.menu {
@@ -188,6 +212,25 @@ a.sub-menu-link.expand::after {
 
     .nav, a.brand, .branding {
         width: 250px;
+    }
+
+    .nav.expand ul.menu {
+        border: none;
+        position: initial;
+        padding-top: 0;
+        color: #ffffff;
+    }
+
+    .nav.expand ul.menu li {    
+        background-color: transparent;
+    }
+    
+    .nav.expand ul.menu li a {
+        color: #ffffff;
+    }
+
+    a.sub-menu-link::after {
+        color: #ffffff;
     }
 }
 
@@ -225,15 +268,15 @@ a.sub-menu-link.expand::after {
 }
 
 #parallax-lvl-1 {
-    z-index: -2
+    z-index: -1
 }
 
 #parallax-lvl-2 {
-    z-index: -3
+    z-index: -1
 }
 
 #parallax-lvl-3 {
-    z-index: -4;
+    z-index: -1;
 }
   
   
