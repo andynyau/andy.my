@@ -1,0 +1,30 @@
+{
+  "name": "andy.my",
+  "version": "1.0.0",
+  "description": "andy.my",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export -o docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andynyau/andy.my.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andynyau/andy.my/issues"
+  },
+  "homepage": "https://github.com/andynyau/andy.my#readme",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
