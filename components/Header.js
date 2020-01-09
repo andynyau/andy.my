@@ -5,7 +5,9 @@ const Header = () => (
       <div className="header-nav">
           <div className="brand">
             <Link href="/">
-              <img src="/images/logo-horizontal.png" alt="Logo" />
+              <a>
+                <img src="/images/logo-horizontal.png" alt="Logo" />
+              </a>
             </Link>
           </div>
       </div>      

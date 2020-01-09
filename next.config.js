@@ -5,7 +5,8 @@ module.exports = withCSS({
   exportTrailingSlash: true,
   exportPathMap: async function() {
     const paths = {
-      '/': { page: '/' }
+      '/': { page: '/' },
+      '/about': { page: '/about' }
     };    
 
     return paths;

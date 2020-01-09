@@ -10,7 +10,9 @@ const Sidebar = () => (
             </button>
             <ul className="menu">
               <li>
-                <Link href="/about">About</Link>
+                <Link href="/about">
+                  <a>About</a>                    
+                </Link>
               </li>
               <li>
                 <a href="#" className="sub-menu-link">
