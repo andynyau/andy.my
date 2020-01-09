@@ -2,7 +2,7 @@ const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
   cssModules: false,
-  exportTrailingSlash: true,
+  exportTrailingSlash: false,
   exportPathMap: async function() {
     const paths = {
       '/': { page: '/' },

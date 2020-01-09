@@ -5157,7 +5157,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\an\\Documents\\Projects\\andy.my\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/Andy/Projects/andy.my/.next");
       return error;
     }
   };
@@ -8771,12 +8771,7 @@ function () {
         var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
         // "<page>/index.html" directly for the SSR page.
 
-        if (true) {
-          // @ts-ignore this is temporarily global (attached to window)
-          if (__NEXT_DATA__.nextExport) {
-            as = rewrite_url_for_export_1.rewriteUrlForNextExport(as);
-          }
-        }
+        if (false) {}
 
         _this2.abortComponentLoad(as); // If the url change is only related to a hash change
         // We should not proceed. We should only change the state.
