@@ -78,14 +78,6 @@ function initParallax() {
 	$('#c3-3').css('left', (maxWidth * 0.3) + 'px');
 }
 
-function resizeSidebar() {
-	if (document.body.scrollWidth >= 976) {
-		$('.sidebar').css('height', $('.content').height() - 20 + 'px');
-	} else {
-		$('.sidebar').css('height', '');
-	}
-}
-
 $(document).ready(function () {	
 
 });
@@ -93,5 +85,4 @@ $(document).ready(function () {
 $(window).bind("resize load", function () {
 	initParallax();
 	parallaxScroll();
-	resizeSidebar();
 });

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
 /***/ "./components/Footer.js":
 /*!******************************!*\
@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/Andy/Projects/andy.my/components/Footer.js";
+var _jsxFileName = "C:\\Users\\an\\Documents\\Projects\\andy.my\\components\\Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -50,7 +50,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/Andy/Projects/andy.my/components/Header.js";
+var _jsxFileName = "C:\\Users\\an\\Documents\\Projects\\andy.my\\components\\Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
 /* harmony import */ var _stylesheets_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stylesheets/style.css */ "./stylesheets/style.css");
 /* harmony import */ var _stylesheets_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_stylesheets_style_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/Andy/Projects/andy.my/components/Layout.js";
+var _jsxFileName = "C:\\Users\\an\\Documents\\Projects\\andy.my\\components\\Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -365,29 +365,43 @@ var Layout = function Layout(props) {
     },
     __self: this
   }), __jsx("div", {
-    className: "container",
+    className: "mainContainer",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45
     },
     __self: this
   }, __jsx("div", {
-    className: "content",
+    className: "outerContainer",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46
     },
     __self: this
+  }, __jsx("div", {
+    className: "innerContainer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
   }, props.children), __jsx(_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 51
     },
     __self: this
-  })), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })))), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 55
     },
     __self: this
   }));
@@ -410,7 +424,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/Andy/Projects/andy.my/components/Sidebar.js";
+var _jsxFileName = "C:\\Users\\an\\Documents\\Projects\\andy.my\\components\\Sidebar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -5651,10 +5665,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FAndy%2FProjects%2Fandy.my%2Fpages%2Findex.js!./":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FAndy%2FProjects%2Fandy.my%2Fpages%2Findex.js ***!
-  \********************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Can%5CDocuments%5CProjects%5Candy.my%5Cpages%5Cindex.js!./":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Can%5CDocuments%5CProjects%5Candy.my%5Cpages%5Cindex.js ***!
+  \**********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9812,7 +9826,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/Andy/Projects/andy.my/pages/index.js";
+var _jsxFileName = "C:\\Users\\an\\Documents\\Projects\\andy.my\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
@@ -9840,7 +9854,6 @@ function (_React$Component) {
     value: function componentDidMount() {
       initParallax();
       parallaxScroll();
-      resizeSidebar();
     }
   }, {
     key: "render",
@@ -9848,7 +9861,7 @@ function (_React$Component) {
       return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 23
         },
         __self: this
       }, "Hello World!");
@@ -9863,13 +9876,13 @@ function (_React$Component) {
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FAndy%2FProjects%2Fandy.my%2Fpages%2Findex.js ***!
-  \************************************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Can%5CDocuments%5CProjects%5Candy.my%5Cpages%5Cindex.js ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FAndy%2FProjects%2Fandy.my%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2FAndy%2FProjects%2Fandy.my%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Can%5CDocuments%5CProjects%5Candy.my%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Can%5CDocuments%5CProjects%5Candy.my%5Cpages%5Cindex.js!./");
 
 
 /***/ }),

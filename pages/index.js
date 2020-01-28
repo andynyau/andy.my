@@ -16,7 +16,6 @@ class Index extends React.Component {
     componentDidMount() {
         initParallax();
         parallaxScroll();
-        resizeSidebar();
     }
 
     render() {

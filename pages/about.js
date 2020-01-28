@@ -16,7 +16,6 @@ class About extends React.Component {
     componentDidMount() {
         initParallax();
         parallaxScroll();
-        resizeSidebar();
     }
 
     render() {

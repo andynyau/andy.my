@@ -42,11 +42,15 @@ const Layout = props => (
 
         <div className="cloud-container"></div>
         <Header />
-        <div className="container">
-            <div className="content">
-                {props.children}
+        <div className="mainContainer">
+            <div className="outerContainer">
+                <div className="innerContainer">
+                    <div className="content">
+                        {props.children}
+                    </div>
+                    <Sidebar />
+                </div>
             </div>
-            <Sidebar />
         </div>
         <Footer />
 

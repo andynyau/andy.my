@@ -53,7 +53,7 @@ hr {
     width: 200px;
 }
 
-.container, .header-nav, .footer-nav {
+.mainContainer, .header-nav, .footer-nav {
     padding: 0;
     margin: 0 auto;
 }
@@ -115,7 +115,7 @@ a.sub-menu-link.expand::after {
 }
 
 .content {
-    background-color: rgba(0,0,0,0.7);
+    /* background-color: rgba(0,0,0,0.7); */
     min-height: 800px;
 }
 
@@ -203,11 +203,11 @@ a.sub-menu-link::after {
 }
 
 @media (min-width: 768px) {
-    .container, .header-nav {
+    .mainContainer, .header-nav {
         padding: 0 15px;
     }
 
-    .container, .header-nav, .nav, .footer-nav {
+    .mainContainer, .header-nav, .nav, .footer-nav {
         width: 720px;
     }
 
@@ -217,22 +217,40 @@ a.sub-menu-link::after {
 }
 
 @media (min-width: 992px) {
-    .container, .header-nav, .footer-nav {
+    .mainContainer, .header-nav, .footer-nav {
         width: 960px;
+    }
+
+    .outerContainer {
+        float: left;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .innerContainer {
+        float: left;
+        width: 100%;
+        position: relative;
+        right: 295px;
     }
 
     .content {
         float: left;
         width: 585px;
         margin-top: 0px;        
+        position: relative;
+        left: 295px;
     }
 
     .sidebar {
-        float: right;
+        float: left;
         width: 295px;
-        position: initial; 
+        position: relative; 
         padding: 20px;
-        background-color: rgba(0,0,0,0.7);        
+        /* background-color: rgba(0,0,0,0.7); */
+        left: 295px;
     }
 
     ul.menu {
@@ -271,7 +289,7 @@ a.sub-menu-link::after {
 }
 
 @media (min-width: 1200px) {
-    .container, .header-nav, .footer-nav {
+    .mainContainer, .header-nav, .footer-nav {
         width: 1170px;
     }
 
@@ -279,12 +297,18 @@ a.sub-menu-link::after {
         width: 300px;
     }
 
+    .innerContainer {
+        right: 310px;
+    }
+
     .content {
         width: 780px;
+        left: 310px;
     }
 
     .sidebar {
         width: 310px;
+        left: 310px;
     }
 }
 
