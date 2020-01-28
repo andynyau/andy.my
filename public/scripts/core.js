@@ -46,7 +46,7 @@ function initParallax() {
 		}
 	}
 
-	var adjust = maxHeight - screen.height;
+	var adjust = 0;// maxHeight - screen.height;
 	if (adjust < 0) adjust = 60;
 
 	$('#c0-1').css('top', (maxHeight * 0.3) + adjust + 'px');

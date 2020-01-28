@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import "../stylesheets/style.css"
 
 const Layout = props => (
-    <div className="Layout">
+    <div className="Layout" id={props.id}>
         <Head>
             <title>Andy.MY - Discover, Learn, Experience and Share</title>
             
