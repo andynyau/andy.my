@@ -1,31 +1,29 @@
 {
   "name": "andy.my",
-  "version": "1.0.0",
-  "description": "andy.my",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export -o docs"
+    "lint": "eslint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andynyau/andy.my.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andynyau/andy.my/issues"
-  },
-  "homepage": "https://github.com/andynyau/andy.my#readme",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "core-js": "^3.6.2",
-    "next": "^9.1.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gray-matter": "^4.0.3",
+    "next": "16.2.12",
+    "next-mdx-remote": "^6.0.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "reading-time": "^1.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
