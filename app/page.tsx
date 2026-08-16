@@ -1,65 +1,122 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getPosts } from "@/lib/posts";
 
-export default function Home() {
+export default function HomePage() {
+  const posts = getPosts();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+
+      {/* Hero */}
+      <section className="border-b border-[#dedad1]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+
+          <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-[#8a6d3b]">
+            Curiosity · Perspective · Discovery
           </p>
+
+          <h1 className="max-w-4xl font-serif text-5xl leading-tight tracking-tight md:text-7xl">
+            Look beyond the obvious.
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#6f6b63] md:text-xl">
+            Ideas, observations, and discoveries from a mind that
+            refuses to stop asking why.
+          </p>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+
+      {/* Latest Articles */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+
+        <div className="flex items-end justify-between border-b border-[#dedad1] pb-5">
+
+          <div>
+            <p className="text-sm uppercase tracking-[0.2em] text-[#8a6d3b]">
+              Discover
+            </p>
+
+            <h2 className="mt-2 font-serif text-3xl md:text-4xl">
+              Latest Articles
+            </h2>
+          </div>
+
+          <Link
+            href="/blog"
+            className="hidden text-sm text-[#6f6b63] transition-colors hover:text-[#8a6d3b] md:block"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            View all →
+          </Link>
+
         </div>
-      </main>
-    </div>
+
+
+        <div className="mt-10 grid gap-x-10 gap-y-14 md:grid-cols-2">
+
+          {posts.slice(0, 4).map((post) => (
+
+            <article key={post.slug}>
+
+              {post.image && (
+                <Link href={`/blog/${post.slug}`}>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="aspect-[16/9] w-full rounded-sm object-cover transition-opacity duration-300 hover:opacity-85"
+                  />
+                </Link>
+              )}
+
+              <div className="mt-5">
+
+                <p className="text-xs uppercase tracking-[0.15em] text-[#8a6d3b]">
+                  {post.date}
+                </p>
+
+                <h3 className="mt-2 font-serif text-2xl leading-snug md:text-3xl">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="transition-colors hover:text-[#8a6d3b]"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+
+                {post.description && (
+                  <p className="mt-3 leading-7 text-[#6f6b63]">
+                    {post.description}
+                  </p>
+                )}
+
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-5 inline-block text-sm font-medium text-[#8a6d3b]"
+                >
+                  Read more →
+                </Link>
+
+              </div>
+
+            </article>
+
+          ))}
+
+        </div>
+
+
+        <div className="mt-12 md:hidden">
+          <Link
+            href="/blog"
+            className="text-sm text-[#8a6d3b]"
+          >
+            View all articles →
+          </Link>
+        </div>
+
+      </section>
+
+    </main>
   );
 }

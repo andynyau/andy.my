@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && shx mv out docs",
+    "build": "next build && shx rm -rf docs && shx mv out docs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -26,5 +26,8 @@
     "shx": "^0.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
   }
 }
