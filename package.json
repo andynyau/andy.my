@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && shx rm -rf docs && shx mv out docs",
-    "start": "next start",
+    "build": "next build",
+    "serve": "npx serve out",
     "lint": "eslint"
   },
   "dependencies": {
