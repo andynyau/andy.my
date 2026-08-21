@@ -23,6 +23,10 @@ export default function AboutPage() {
             Some subjects are practical. Others are simply interesting. The
             common thread is curiosity.
           </p>
+          <p>
+            I hope you find something here that sparks your curiosity, and that
+            would inspire you to explore, learn and discover more about the world around you.
+          </p>          
         </div>
       </div>
     </>
