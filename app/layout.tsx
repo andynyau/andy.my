@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getPosts } from "@/lib/posts";
-import Search from "./Search";
+import { Space_Grotesk } from "next/font/google";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import SearchProvider from "@/components/SearchProvider";
+import SectionContainer from "@/components/SectionContainer";
+import siteMetadata from "@/data/siteMetadata";
+import { ThemeProviders } from "./theme-providers";
 import "./globals.css";
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
+
 export const metadata: Metadata = {
-  title: "andy.my",
-  description:
-    "Ideas, observations, and discoveries from a mind that sees beyond the obvious.",
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: {
+    default: siteMetadata.title,
+    template: `%s | ${siteMetadata.title}`,
+  },
+  description: siteMetadata.description,
 };
 
 export default function RootLayout({
@@ -15,97 +28,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const posts = getPosts();
-
   return (
-    <html lang="en">
-      <body>
-        {/* Header */}
-        <header className="border-b border-[#dedad1] bg-[#f7f5f0]">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
-
-            <Link
-              href="/"
-              className="font-serif text-3xl font-semibold tracking-tight"
-            >
-              andy.my
-            </Link>
-
-            <Search posts={posts} />
-
-          </div>
-        </header>
-
-        {/* Main content */}
-        {children}
-
-        {/* Footer */}
-        <footer className="mt-24 border-t border-[#dedad1]">
-          <div className="mx-auto max-w-6xl px-6 py-12">
-
-            <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-
-              <div>
-                <Link
-                  href="/"
-                  className="font-serif text-2xl font-semibold"
-                >
-                  andy.my
-                </Link>
-
-                <p className="mt-3 max-w-sm text-sm leading-6 text-[#6f6b63]">
-                  Ideas, observations, and discoveries from a mind
-                  that sees beyond the obvious.
-                </p>
-              </div>
-
-              <nav className="flex flex-wrap gap-x-7 gap-y-3 text-sm">
-                <Link
-                  href="/blog"
-                  className="transition-colors hover:text-[#8a6d3b]"
-                >
-                  Articles
-                </Link>
-
-                <Link
-                  href="/about"
-                  className="transition-colors hover:text-[#8a6d3b]"
-                >
-                  About
-                </Link>
-
-                <Link
-                  href="/contact"
-                  className="transition-colors hover:text-[#8a6d3b]"
-                >
-                  Contact
-                </Link>
-
-                <Link
-                  href="/privacy"
-                  className="transition-colors hover:text-[#8a6d3b]"
-                >
-                  Privacy
-                </Link>
-
-                <Link
-                  href="/disclaimer"
-                  className="transition-colors hover:text-[#8a6d3b]"
-                >
-                  Disclaimer
-                </Link>
-              </nav>
-
-            </div>
-
-            <div className="mt-10 border-t border-[#dedad1] pt-6">
-              <p className="text-xs text-[#8a857c]">
-                © {new Date().getFullYear()} andy.my. All rights reserved.
-              </p>
-            </div>
-
-          </div>
-        </footer>
+    <html
+      lang={siteMetadata.language}
+      className={`${spaceGrotesk.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body className="bg-white pl-[calc(100vw-100%)] font-sans text-black antialiased dark:bg-gray-950 dark:text-white">
+        <ThemeProviders>
+          <SearchProvider>
+            <SectionContainer>
+              <Header />
+              <main className="mb-auto">{children}</main>
+              <Footer />
+            </SectionContainer>
+          </SearchProvider>
+        </ThemeProviders>
       </body>
     </html>
   );

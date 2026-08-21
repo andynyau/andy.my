@@ -1,30 +1,25 @@
+import PageTitle from "@/components/PageTitle";
+
 export const metadata = {
-    title: "Privacy Policy | andy.my",
-    description: "Privacy Policy for andy.my.",
-  };
-  
-  export default function PrivacyPage() {
-    return (
-      <main className="mx-auto max-w-5xl px-6 py-16">
-        <h1 className="text-4xl font-bold">
-          Privacy Policy
-        </h1>
-  
-        <div className="mt-8 max-w-3xl space-y-6 leading-8">
+  title: "Privacy",
+  description: "Privacy policy for andy.my.",
+};
+
+export default function PrivacyPage() {
+  return (
+    <>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <PageTitle>Privacy</PageTitle>
+        </div>
+        <div className="prose dark:prose-invert max-w-none py-8">
           <p>
-            Your privacy is important to me.
-          </p>
-  
-          <p>
-            This page will describe how andy.my collects, uses and
-            protects information when you visit the website.
-          </p>
-  
-          <p>
-            This policy will be updated before advertising,
-            analytics and other third-party services are enabled.
+            This site may use basic analytics and comment services. No personal
+            data is sold or shared with third parties beyond what is required to
+            operate those services.
           </p>
         </div>
-      </main>
-    );
-  }
+      </div>
+    </>
+  );
+}

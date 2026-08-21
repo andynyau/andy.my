@@ -1,3 +1,5 @@
-:HL["/_next/static/chunks/3vope_tgtzbjg.css","style"]
-:HL["https://picsum.photos/id/1015/1200/700","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"tjH0DTcLvdrqXia-qnuV6"}
+:HL["/_next/static/chunks/2ttwp7mw0kx1v.css","style"]
+:HL["/_next/static/media/0c89a48fa5027cee-s.p.2cyn07wtgehh0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/images/blog/sony-ends-physical.jpg","image"]
+:HL["/images/blog/my-first-blog.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"1YLpQ3f-2Lexef5mRndnN"}

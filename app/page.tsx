@@ -1,122 +1,110 @@
-import Link from "next/link";
+import Link from "@/components/Link";
+import Tag from "@/components/Tag";
+import siteMetadata from "@/data/siteMetadata";
+import { formatDateShort } from "@/lib/formatDate";
 import { getPosts } from "@/lib/posts";
+
+const MAX_DISPLAY = 5;
 
 export default function HomePage() {
   const posts = getPosts();
 
   return (
-    <main>
-
-      {/* Hero */}
-      <section className="border-b border-[#dedad1]">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-
-          <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-[#8a6d3b]">
-            Curiosity · Perspective · Discovery
-          </p>
-
-          <h1 className="max-w-4xl font-serif text-5xl leading-tight tracking-tight md:text-7xl">
-            Look beyond the obvious.
-          </h1>
-
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#6f6b63] md:text-xl">
-            Ideas, observations, and discoveries from a mind that
-            refuses to stop asking why.
-          </p>
-
-        </div>
-      </section>
-
-
-      {/* Latest Articles */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-
-        <div className="flex items-end justify-between border-b border-[#dedad1] pb-5">
-
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-[#8a6d3b]">
-              Discover
-            </p>
-
-            <h2 className="mt-2 font-serif text-3xl md:text-4xl">
-              Latest Articles
-            </h2>
-          </div>
-
-          <Link
-            href="/blog"
-            className="hidden text-sm text-[#6f6b63] transition-colors hover:text-[#8a6d3b] md:block"
-          >
-            View all →
-          </Link>
-
-        </div>
-
-
-        <div className="mt-10 grid gap-x-10 gap-y-14 md:grid-cols-2">
-
-          {posts.slice(0, 4).map((post) => (
-
-            <article key={post.slug}>
-
-              {post.image && (
-                <Link href={`/blog/${post.slug}`}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="aspect-[16/9] w-full rounded-sm object-cover transition-opacity duration-300 hover:opacity-85"
-                  />
-                </Link>
-              )}
-
-              <div className="mt-5">
-
-                <p className="text-xs uppercase tracking-[0.15em] text-[#8a6d3b]">
-                  {post.date}
-                </p>
-
-                <h3 className="mt-2 font-serif text-2xl leading-snug md:text-3xl">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="transition-colors hover:text-[#8a6d3b]"
-                  >
-                    {post.title}
-                  </Link>
-                </h3>
-
-                {post.description && (
-                  <p className="mt-3 leading-7 text-[#6f6b63]">
-                    {post.description}
-                  </p>
-                )}
-
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-5 inline-block text-sm font-medium text-[#8a6d3b]"
-                >
-                  Read more →
-                </Link>
-
+    <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
+          Along the Way
+        </h1>
+        <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          {siteMetadata.description}
+        </p>
+      </div>
+      <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {!posts.length && (
+          <li className="py-12 text-gray-500 dark:text-gray-400">
+            No posts found.
+          </li>
+        )}
+        {posts.slice(0, MAX_DISPLAY).map((post) => (
+          <li key={post.slug} className="py-12">
+            <article>
+              <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                <dl>
+                  <dt className="sr-only">Published on</dt>
+                  <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                    <time dateTime={post.date}>
+                      {formatDateShort(post.date, siteMetadata.locale)}
+                    </time>
+                  </dd>
+                </dl>
+                <div className="space-y-5 xl:col-span-3">
+                  <div className="space-y-6">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:items-start">
+                      {post.image && (
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="shrink-0 overflow-hidden rounded-md"
+                          aria-label={`Thumbnail for ${post.title}`}
+                        >
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="h-20 w-20 sm:h-24 sm:w-24 rounded-md object-cover transition-transform duration-200 hover:scale-105"
+                          />
+                        </Link>
+                      )}
+                      <div className="flex-1 space-y-3">
+                        <div>
+                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
+                            <Link
+                              href={`/blog/${post.slug}`}
+                              className="text-gray-900 dark:text-gray-100"
+                            >
+                              {post.title}
+                            </Link>
+                          </h2>
+                          {post.tags.length > 0 && (
+                            <div className="flex flex-wrap">
+                              {post.tags.map((tag) => (
+                                <Tag key={tag} text={tag} />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        {post.summary && (
+                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                            {post.summary}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-base leading-6 font-medium">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      aria-label={`Read more: "${post.title}"`}
+                    >
+                      Read more &rarr;
+                    </Link>
+                  </div>
+                </div>
               </div>
-
             </article>
-
-          ))}
-
-        </div>
-
-
-        <div className="mt-12 md:hidden">
+          </li>
+        ))}
+      </ul>
+      {posts.length > MAX_DISPLAY && (
+        <div className="flex justify-end py-4 text-base leading-6 font-medium">
           <Link
             href="/blog"
-            className="text-sm text-[#8a6d3b]"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="All posts"
           >
-            View all articles →
+            All Posts &rarr;
           </Link>
         </div>
-
-      </section>
-
-    </main>
+      )}
+    </div>
   );
 }

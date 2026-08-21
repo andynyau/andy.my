@@ -1,29 +1,26 @@
+import Link from "@/components/Link";
+import PageTitle from "@/components/PageTitle";
+import siteMetadata from "@/data/siteMetadata";
+
 export const metadata = {
-    title: "Contact | andy.my",
-    description: "Contact andy.my.",
-  };
-  
-  export default function ContactPage() {
-    return (
-      <main className="mx-auto max-w-5xl px-6 py-16">
-        <h1 className="text-4xl font-bold">
-          Contact
-        </h1>
-  
-        <div className="mt-8 max-w-3xl text-lg leading-8">
+  title: "Contact",
+  description: "Contact andy.my.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <PageTitle>Contact</PageTitle>
+        </div>
+        <div className="prose dark:prose-invert max-w-none py-8">
+          <p>If you would like to get in touch, you can contact me at:</p>
           <p>
-            If you would like to get in touch, you can contact me at:
-          </p>
-  
-          <p className="mt-4">
-            <a
-              href="mailto:andy@andy.my"
-              className="underline"
-            >
-              andy@andy.my
-            </a>
+            <Link href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</Link>
           </p>
         </div>
-      </main>
-    );
-  }
+      </div>
+    </>
+  );
+}
